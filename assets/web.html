@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta charset="utf-8"/>
+		<title>顶部</title>
+		<link rel="stylesheet" href="css/style.css"/>
+		<style>
+			.topbar{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+			.bottombar{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div id='slider' class='swipe' style="background: #343434;">
+			<div class="outer">
+				<div class='swipe-wrap' style="background-image: url('https://raw.github.com/zimengle/Static/master/Images/1.jpg')">
+				</div>
+				<div class='swipe-wrap' style="background-image: url('https://raw.github.com/zimengle/Static/master/Images/2.jpg')">
+				</div>
+				<div class='swipe-wrap' style="background-image: url('https://raw.github.com/zimengle/Static/master/Images/3.jpg')">
+				</div>
+				<div class='swipe-wrap' style="background-image: url('https://raw.github.com/zimengle/Static/master/Images/4.jpg')">
+				</div>
+				<div class='swipe-wrap' style="background-image: url('https://raw.github.com/zimengle/Static/master/Images/5.jpg')">
+				</div>
+			</div>
+		</div>
+		<iframe frameborder="0" src="topbar.html" class="topbar"></iframe>
+		<iframe frameborder="0" src="bottombar.html" class="bottombar"></iframe>
+		<script>
+			var iframs = document.getElementsByTagName("iframe");
+			for(var i in iframs){
+				iframs[i].onload = function(){
+					this.style.height = this.contentWindow.document.documentElement.offsetHeight + 'px';
+				}
+			}
+		</script>
+		<script src="js/swipe.js"></script>
+		<script>
+			var slider = Swipe(document.getElementById('slider'), {
+			});
+		</script>
+	</body>
+</html>

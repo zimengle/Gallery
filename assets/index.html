@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="urf-8"/>
+		<title>Gallery Demo</title>
+		<script src="js/X_light.js"></script>
+		
+	</head>
+	<body>
+		
+		<script>
+			
+			var datasource = {
+				"images":["https://raw.github.com/zimengle/Static/master/Images/1.jpg","https://raw.github.com/zimengle/Static/master/Images/2.jpg","https://raw.github.com/zimengle/Static/master/Images/3.jpg"],
+				"selected":0,
+				"extra":{
+					title:['title1','title2','title3']
+				}
+			}
+			
+			var gallery = new X.light.gallery({
+				toolbar:{
+					topbar:"http://172.22.72.233:8088/assets/gallery/topbar.html",
+					bottombar:"http://172.22.72.233:8088/assets/gallery/bottombar.html",
+					visible:"show",
+					effect:"slide"
+				},
+				style:{
+					background:"#333"
+				},
+				dataSource:datasource
+			});
+			
+			gallery.init();
+			
+		</script>
+	</body>
+</html>

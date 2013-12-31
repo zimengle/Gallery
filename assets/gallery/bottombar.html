@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="urf-8"/>
+		<title>底部</title>
+		<script src="../js/X_light.js"></script>
+		<style>
+			body{
+				background: rgba(0,0,0,0.4);
+				color: white;
+			}
+			#title{
+				height: 30px;
+				line-height: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="title"></div>
+		<script>
+			var $title = document.getElementById("title");
+			X.light.gallery_callback.onSelected = function(pos,gallery){
+				var params = gallery.getParams();
+				$title.innerHTML=params.dataSource.extra.title[pos];
+			}
+		</script>
+	</body>
+</html>
